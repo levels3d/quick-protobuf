@@ -12,8 +12,12 @@ edition = "2018"
 
 [dependencies]
 byteorder = "1.2.4"
-failure = "0.1.1"
+failure = { version = "0.1.1", default-features = false, features = ["derive"] }
 failure_derive = "0.1.1"
 
 [dev-dependencies]
 lazy_static = "0.2.10"
+
+[features]
+default = ["backtrace"]
+backtrace = ["failure/std"]
